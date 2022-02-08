@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <br />
+  <button (click)="getFileList()">Get File List</button>
+  <br /><br />
+  <div style="margin: 10px">
+    <label>Select File:</label>
+    <select [(ngModel)]="selectedFile">
+      <option *ngFor="let file of fileList" [value]="file">{{ file | appFileNamePipe }}</option>
+    </select>
+    <br />
+    <br />
+    <p>Selected File: {{ selectedFile }}</p>
+  </div>
+  <button (click)="downloadUsingByteArrayData()">Download file as byte array data</button>
+  <br />
+  <br />
+  <button (click)="downloadUsingStringData()">Download file as base64 string data</button>
+  <br />
+  <br />
+  <div style="text-align: center;">
+    <img [src]="sanitizedImageUrl" style="max-height: 400px;" />
+  </div>
+</div>
